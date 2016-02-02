@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -e
-
+NAME='packer.io'
 URL='https://releases.hashicorp.com/packer/0.8.6/packer_0.8.6_linux_amd64.zip'
 VERSION=${BUILD}
 curl -k -L -o ${URL##*/} $URL || {
@@ -9,13 +9,13 @@ curl -k -L -o ${URL##*/} $URL || {
     exit 1
 }
 
-mkdir -p packer/target/opt/packer
-unzip -qq ${URL##*/} -d packer/target/opt/packer
+mkdir -p packer/target/${NAME}/opt/packer
+unzip -qq ${URL##*/} -d packer/target/${NAME}/opt/packer
 
 /opt/ruby22/bin/fpm -s dir -t rpm -f \
 	-C packer/target \
 	-v ${BUILD} \
-	-n packer \
+	-n ${NAME} \
 	-p packer/target \
 	-a amd64 \
         -v ${BUILD} \
