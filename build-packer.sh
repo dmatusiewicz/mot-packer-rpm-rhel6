@@ -9,8 +9,8 @@ curl -k -L -o ${URL##*/} $URL || {
     exit 1
 }
 
-mkdir -p packer/target/${NAME}/opt/packer
-unzip -qq ${URL##*/} -d packer/target/${NAME}/opt/packer
+mkdir -p packer/target/opt/packer
+unzip -qq ${URL##*/} -d packer/target/opt/packer
 
 /opt/ruby22/bin/fpm -s dir -t rpm -f \
 	-C packer/target \
