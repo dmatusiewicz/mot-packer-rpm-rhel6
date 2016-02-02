@@ -14,11 +14,10 @@ unzip -qq ${URL##*/} -d packer/target/${NAME}/opt/packer
 
 /opt/ruby22/bin/fpm -s dir -t rpm -f \
 	-C packer/target \
-	-v ${BUILD} \
+	-v ${VERSION} \
 	-n ${NAME} \
 	-p packer/target \
 	-a amd64 \
-        -v ${BUILD} \
         --rpm-ignore-iteration-in-dependencies \
         --description "Simple Packer RPM package for RedHat Enterprise Linux 6" \
         --url "https://github.com/dmatusiewicz/packer-rpm-rhel6" \
