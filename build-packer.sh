@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 NAME='packer.io'
 URL='https://releases.hashicorp.com/packer/0.8.6/packer_0.8.6_linux_amd64.zip'
 VERSION=${BUILD}
