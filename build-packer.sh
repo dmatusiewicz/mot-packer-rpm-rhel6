@@ -3,7 +3,7 @@
 set -e
 NAME='packer.io'
 URL='https://releases.hashicorp.com/packer/0.8.6/packer_0.8.6_linux_amd64.zip'
-VERSION=${BUILD}
+VERSION=${BUILD_NUMBER}
 curl -k -L -o ${URL##*/} $URL || {
     echo $"URL or version not found!" >&2
     exit 1
