@@ -2,7 +2,7 @@
 
 set -e
 NAME='packer.io'
-URL='https://releases.hashicorp.com/packer/1.2.3/packer_1.2.3_linux_amd64.zip'
+URL='https://releases.hashicorp.com/packer/1.2.5/packer_1.2.5_linux_amd64.zip'
 VERSION=${BUILD_NUMBER}
 curl -k -L -o ${URL##*/} $URL || {
     echo $"URL or version not found!" >&2
